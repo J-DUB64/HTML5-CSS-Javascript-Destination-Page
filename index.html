@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations WishList</title>
+    <meta name="description" content="A Head-turning Destination WishList.">
+    <meta name="robots" content="index, follow">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container nav_container">
+            <a href="index.html" class="nav__logo"><img src="./Images/Logo.png" alt="Nav Logo"></a>
+            <ul class="nav__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#Restaurants">Restaurants</a></li>
+                <li><a href="#Destinations">Destinations</a></li>
+                <li><a href="#Bucket List">Bucket List</a></li>
+            </ul>
+            <button class="btn btn-secondary" id="loginBtn">Login</button>
+            <!-- Modal window for login -->
+                <div class="modal" id="loginModal">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Login</h5>
+                            <button type="button" class="close" id="closeModal">&times;</button>
+                         </div>
+                        <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="modalUsername">Username</label>
+                                <input required minlength="2" type="text" class="form-control" id="modalUsername" placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="modalPassword">Password</label>
+                                <input required minlength="2" type="password" class="form-control" id="modalPassword" placeholder="Enter your password">
+                            </div>
+                            <div class="form-group">
+                                <input type="Submit" value="Sign Up" class="btn btn-primary">
+                            </div>
+                        </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="Sign Up" class="btn btn-primary" id="submitLogin">Submit</button>
+                        </div>                        
+                    </div>
+                    </div>
+                </div>
+
+            <ul class="nav__socials">
+                <li><a href="https://instagram.com/" target="_blank"><i class="uil uil-instagram-alt"></i></a></li>
+                <li><a href="https://Facebook.com/" target="_blank"><i class="uil uil-facebook"></i></a></li>
+                <li><a href="https://Twitter.com/" target="_blank"><i class="uil uil-twitter"></i></a></li>
+                <li><a href="https://LinkedIn.com/" target="_blank"><i class="uil uil-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+<header>
+        <div class="container text-center">
+            <h1 class="display__4">Destinations WishList</h1>
+            <p class="lead">Create that bucket list of destinations you always dreamed of going!</p>
+        </div>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <form id="destination_details_form" action="submit.php">
+                    <div class="form-group">
+                        <label for="name">Destination name</label>
+                        <input required minlength="2" type="text" class="form-control" id="name"
+                            placeholder="Enter the name of the destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input required minlength="2" type="text" class="form-control" id="location"
+                            placeholder="Where is it located?">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Photo</label>
+                        <input type="url" class="form-control" id="photo" placeholder="Enter an image url of the place">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description"
+                            placeholder="Where is it located?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit_btn">Add to list</button>
+                </form>
+            </div>
+            <div class="col-md-9">
+                <h4 id="title">Enter Destination Details</h4>
+                <div id="destinations_container">
+                    <!-- Dynamically populated by Javascript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Javascript -->
+    <script src="./main.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

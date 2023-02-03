@@ -1,0 +1,374 @@
+/* Make the #destinations_container content to display horizontally and wrap */
+
+.submit_btn {
+  width: 100%;
+}
+#destinations_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#title {
+  text-align: center;
+}
+
+.buttons_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+:root {
+    --color-primary: #3A7FA8;
+/*================== Green Theme ===========================*/
+    --color-primary: #3A7FA8;
+    --color-primary-variant: #ff7b02;
+    --color-bg-1: #99AABF;
+    --color-bg-2: #F2F2EB; 
+    --color-bg-3: #F2A25C;
+    --color-bg-4: #591D0F;
+    --color-bg-5: #0D1940;
+    --color-white: hsl(0, 0%, 90%);
+    
+    /*=============== Purple Theme ======================= */
+    /* --color-primary: #ff7b01;
+    --color-primary-variant: #e5a55d;
+    --color-bg-1: #024059;
+    --color-bg-2: #C4EEF2;
+    --color-bg-3: #4D8C8C;
+    --color-bg-4: #73BFBF;
+    --color-light: #BF8756;
+    --color-white: hsl(0, 0%, 90%); */
+
+    --container-width-lg: 88%;
+    --container-width-md: 92%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background: rgb(229, 165, 93, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: var(--color-primary-variant);
+    border-radius: 0.25rem;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    background: var(--color-bg-1) url('./images/bg-texture.png');
+    color: var(--color-light);
+    line-height:  1.7;
+}
+
+h1, h2{
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--color-white);
+}
+
+h2 {
+    font-size: 3.5rem;
+    color: var(--color-white);
+}
+
+h4 {
+    font-size: 3.5rem;
+    color: var(--color-white);
+}
+
+a {
+    color: var(--color-light);
+    transition: all 400ms ease;
+    color: var(--color-bg-5);
+}
+
+a:hover{
+    color: var(--color-bg-3)
+}
+
+
+img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+main {
+    height: 80%;
+    display: flex;  
+    justify-content: space-evenly;
+}
+
+article {
+    border: 1px solid;
+    width: 40%;
+}
+
+p {
+    color: var(--color-bg-5);
+}
+
+/*----------------------------------------- Nav Bar ----------------------------------------------------*/
+nav {
+    height: 5rem;
+    width: 100vw;
+    display: flex;
+    place-items: center; 
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: var(--color-bg-5);
+}
+
+/* nav class on scroll using javascript */
+.window-scrolled {
+    background: var(--color-bg-5);
+    border-bottom: 0.2rem solid var(--color-bg-3);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+    max-width: 2160px;
+    height: 07rem;
+}
+
+.nav_container {
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* ===========================  Only need on tablets and Phones ==========================*/
+.nav__toggle-btn {
+    display: none;
+}
+
+.nav__logo {
+    width: 20%;
+    margin-top: 10%;
+    left: 20%;
+    padding-top: 1rem;
+}
+
+.nav__links {
+    font-size: large;
+    font-weight: 600;
+    display: flex;
+    gap: 4rem;
+    color: var(--color-bg-2);
+    position: absolute;
+    left: 35%;
+    margin-top: 1rem;
+}
+
+.nav__links a{
+  color: var(--color-bg-2);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight:400;
+}
+
+.btn-secondary {
+    font-size: small;
+    font-weight: 400;
+    display: flex;
+    gap: 4rem;
+    color: var(--color-bg-2);
+    position: relative;
+    left: 35%;
+    align-items: center;
+    background-color: var(--color-primary-variant);
+}
+
+
+/*----------------------------------------- Header ----------------------------------------------------*/
+header {
+    width: 100vw;
+    height: 20vh;
+    position: relative;
+    top: 0;
+    background: linear-gradient(var(--color-bg-5),var(--color-primary));
+    overflow: hidden;
+}
+
+.header__container{
+    display: grid;
+    grid-template-columns: 42% 52%;
+    gap: 7%;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    position: absoulte;
+}
+
+.display__4 {
+    display: grid;
+    font-size: 5rem;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 300;
+    color: var(--color-bg-2);
+    position: relative;
+
+}
+
+.destination__detail__title {
+    display: flex;
+    left: 20rem;
+    font-family: Georgia;
+    font-size: larger;
+    font-weight: 300;
+    color: var(--color-bg-2);
+    position: relative;
+    margin-top: 2rem;
+}
+
+
+.header__image-bg {
+    background: var(--color-bg-5);
+    height: 30rem;
+    width: 60rem;
+    position: absolute;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+}
+
+.header__image-lg {
+    width: 55rem;
+    height: 30rem;
+    position: relative;
+    top: 1rem;
+    left: 3rem;
+    margin-top: 5rem;
+
+} 
+
+.destination__details__form {
+    top: 3rem;
+    left: 4rem;
+    height: 22rem;
+    width: 22rem;
+    position: absolute;
+    margin-top: 5rem;
+}
+
+.container {
+  width:100%;
+}
+
+.row {
+  background-image: url('./Images/Italy.jpeg');
+  background-size:cover;
+  background-position: center;
+  height: 650%;
+
+}
+
+.col-md-3 {
+  background-image: url('./Images/Dock.jpeg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+  padding-left: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  left: 5%;
+}
+
+.form-group label {
+  color: white;
+}
+
+/* center the "name" label and input field */
+.form-group input#name {
+    margin: 0 auto;
+    display: block;
+    color: var(--color-bg-5);
+    font-family: sans-serif;
+}
+
+.form-group input#location {
+    margin: 0 auto;
+    display: block;
+    color: var(--color-bg-5);
+    font-family: sans-serif;
+}
+
+.form-group input#photo {
+    margin: 0 auto;
+    display: block;
+    color: var(--color-bg-5);
+    font-family: sans-serif;
+}
+
+.form-group input#description {
+    margin: 0 auto;
+    display: block;
+    color: var(--color-bg-5);
+    font: sans-serif;
+}
+
+
+.body__title {
+    color: var(--color-bg-4);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+}
+
+
+
+.wishlist-title {
+  font-size: 40 px;
+  font-weight: bold;
+  color: var(--color-bg-2);
+  text-align: center;
+  font-weight: 400;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#title {
+  color: var(--color-bg-2);
+  font-size: 40px;
+  font-weight:400;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+
+  .card {
+    width: 15rem;
+    height: fit-content;
+    background-color: var(--color-bg-2);
+    background-image: "./Images/Flying.jpeg";
+    background-size: cover;
+    background-position: center;
+    margin: 20px;
+  }
+  
