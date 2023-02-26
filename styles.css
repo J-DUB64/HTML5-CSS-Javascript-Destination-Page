@@ -284,15 +284,17 @@ header {
 
 .row {
   background-image: url('./Images/Italy.jpeg');
-  background-size:cover;
+  background: size cover;
   background-position: center;
-  height: 650%;
+  height: 100%;
+  margin-top: -6rem;
+  background-repeat: no-repeat;
 
 }
 
 .col-md-3 {
   background-image: url('./Images/Dock.jpeg');
-  background-size: cover;
+  background-size: 100rem;
   background-position: center;
   margin-top: 5rem;
   margin-bottom: 4rem;
@@ -301,6 +303,7 @@ header {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.8);
   border-radius: 1rem;
   left: 5%;
+  background-repeat: no-repeat;
 }
 
 .form-group label {

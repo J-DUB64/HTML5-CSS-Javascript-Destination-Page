@@ -1,14 +1,31 @@
-// Listen to the form being submitted
-document.getElementById("destination_details_form").addEventListener("submit", handleFormSubmit);
-
 // Show the login modal when the login button is clicked
-document.getElementById("loginBtn").addEventListener("click", function() {
+document.getElementById("loginBtn").addEventListener("click", function () {
   document.getElementById("loginModal").style.display = "block";
 });
 
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("loginModal").style.display = "none";
+});
+
+// Listen to the form being submitted
+document
+  .getElementById("destination_details_form")
+  .addEventListener("submit", handleFormSubmit);
+document
+  .getElementById("destination_details_form")
+  .addEventListener("submit", handleFormSubmit);
+document
+  .getElementById("submitLogin")
+  .addEventListener("click", handleLoginSubmit);
+document
+  .getElementById("closeModal")
+  .addEventListener("click", closeLoginModal);
+document.getElementById("signUp").addEventListener("click", closeLoginModal);
+
 // Handle the login submit button
-// Handle the login submit button
-document.getElementById("submitLogin").addEventListener("click", handleLoginSubmit);
+document
+  .getElementById("submitLogin")
+  .addEventListener("click", handleLoginSubmit);
 
 function handleLoginSubmit() {
   const username = document.getElementById("modalUsername").value;
@@ -23,10 +40,9 @@ function handleLoginSubmit() {
   // Add your code here to submit the form data to the server
 }
 
-document.getElementById("closeModal").addEventListener("click", function(){
+document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("loginModal").style.display = "none";
 });
-
 
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -43,16 +59,16 @@ function handleLoginSubmit() {
   }
 }
 
-$(document).ready(function() {
-  $("#loginBtn").click(function() {
+$(document).ready(function () {
+  $("#loginBtn").click(function () {
     $("#loginModal").show();
   });
 
-  $("#closeModal").click(function() {
+  $("#closeModal").click(function () {
     $("#loginModal").hide();
   });
 
-  $("#submitLogin").click(function() {
+  $("#submitLogin").click(function () {
     const username = $("#modalUsername").val();
     const password = $("#modalPassword").val();
 
@@ -68,10 +84,10 @@ function handleFormSubmit(event) {
   event.preventDefault(); // stop the form from refreshing the page
 
   // Extract the values of the different elements of the form and store them in variables
-let destinationName = event.target.elements["name"].value;
-let destinationLocation = event.target.elements["location"].value;
-let destinationPhoto = event.target.elements["photo"].value;
-let destinationDesc = event.target.elements["description"].value;
+  let destinationName = event.target.elements["name"].value;
+  let destinationLocation = event.target.elements["location"].value;
+  let destinationPhoto = event.target.elements["photo"].value;
+  let destinationDesc = event.target.elements["description"].value;
 
   // Reset the form elements values for a new entry
   resetFormValues(event.target);
@@ -86,10 +102,10 @@ let destinationDesc = event.target.elements["description"].value;
 
   let wishListContainer = document.querySelector("#destinations_container");
 
-// Change wishlist title if the Bucket List was empty
+  // Change wishlist title if the Bucket List was empty
   if (wishListContainer.children.length === 0) {
-  document.querySelector("#title").innerHTML = "Bucket List";
-}
+    document.querySelector("#title").innerHTML = "Bucket List";
+  }
 
   // Appended the destinationCard in the #destinations_container div
   document
@@ -104,19 +120,39 @@ function resetFormValues(form) {
   }
 }
 
+async function createDestinationCard(name, location, photoUrl, description) {
+  // Call the function to get the image from the API
+  const imageUrl = await getImageFromAPI(name, location);
+  // Use the image URL from the API instead of the default image
+  const card = document.createElement("div");
+  card.setAttribute("class", "card");
+  const img = document.createElement("img");
+  img.setAttribute("class", "card-img-top");
+  img.setAttribute("src", imageUrl);
+  card.appendChild(img);
+}
+
+async function getImageFromAPI(name, location) {
+  const API_KEY = "n2GBy3QzdL5QdVHAAIQtALNlNWOP0qkji3JlU23RUY8";
+  const API_URL = `https://api.unsplash.com/photos/?client_id=CS-sH-_2PlH9EUbInV8rqdeU30Gwwv11iPvk416RfQg&query=${name}+$location`;
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  return data[0].urls.regular;
+}
+
 function createDestinationCard(name, location, photoUrl, description) {
   // Use the passed arguments to create a bootstrap card with destination details
+
   const card = document.createElement("div");
   card.setAttribute("class", "card");
   card.style.width = "15rem";
   card.style.height = "fit-content";
   card.style.margin = "20px;";
-  
+
   // Create the destination photo element and append it to the card
   const img = document.createElement("img");
   img.setAttribute("class", "card-img-top");
   img.setAttribute("alt", name);
-  
 
   // Check to make sure that the photo url was entered since it's optional
   // if the user didn't enter a photo url, show a constant photo.
@@ -126,14 +162,13 @@ function createDestinationCard(name, location, photoUrl, description) {
 
   const cardBody = document.createElement("div");
   cardBody.setAttribute("class", "card-body");
-  
+
   cardBody.innerHTML = `
     <h5 class="card-title">${name}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${location}</h6>
   `;
-  
+
   card.appendChild(cardBody);
-  
 
   // Only add description text if the user entered some
   if (description.length !== 0) {
