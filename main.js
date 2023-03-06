@@ -12,9 +12,6 @@ document
   .getElementById("destination_details_form")
   .addEventListener("submit", handleFormSubmit);
 document
-  .getElementById("destination_details_form")
-  .addEventListener("submit", handleFormSubmit);
-document
   .getElementById("submitLogin")
   .addEventListener("click", handleLoginSubmit);
 document
@@ -132,12 +129,16 @@ async function createDestinationCard(name, location, photoUrl, description) {
   card.appendChild(img);
 }
 
-async function getImageFromAPI(name, location) {
-  const API_KEY = "n2GBy3QzdL5QdVHAAIQtALNlNWOP0qkji3JlU23RUY8";
-  const API_URL = `https://api.unsplash.com/photos/?client_id=CS-sH-_2PlH9EUbInV8rqdeU30Gwwv11iPvk416RfQg&query=${name}+$location`;
-  const response = await fetch(API_URL);
-  const data = await response.json();
-  return data[0].urls.regular;
+//get image from Unsplash
+function getImage(newCard, name) {
+  const url = `https://api.unsplash.com/search/photos?query=${name}&client_id=_eG_tNCMVdfemrLhM77_qu_ZGahNzGQJcQ9LI5iLvQg`;
+  photoPromise = fetch(url)
+    .then((response) => response.json())
+    .then((data) =>
+      newCard
+        .querySelector(".card-img-top")
+        .setAttribute("src", data.results[0].urls.small)
+    );
 }
 
 function createDestinationCard(name, location, photoUrl, description) {

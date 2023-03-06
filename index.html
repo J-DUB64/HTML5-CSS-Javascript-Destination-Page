@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +32,7 @@
                             <button type="button" class="close" id="closeModal">&times;</button>
                          </div>
                         <div class="modal-body">
+
                         <form>
                             <div class="form-group">
                                 <label for="modalUsername">Username</label>
@@ -65,8 +65,8 @@
 
 <header>
         <div class="container text-center">
-            <h1 class="display__4">Destinations WishList</h1>
-            <p class="lead">Create that bucket list of destinations you always dreamed of going!</p>
+            <h1 class="display__4" id="destinations wishlist">Destinations WishList</h1>
+            <p class="subtitle">Create that bucket list of destinations you always dreamed of going!</p>
         </div>
 </header>
     <div class="container"></div>
@@ -74,21 +74,23 @@
             <div class="col-md-3">
                 <form id="destination_details_form" action="submit.php">
                     <div class="form-group">
-                        <label for="name">Destination name</label>
+                        <label class="form-label" for="name">Destination Name</label>
                         <input required minlength="2" type="text" class="form-control" id="name"
                             placeholder="Enter the name of the destination">
                     </div>
                     <div class="form-group">
-                        <label for="location">Location</label>
+                        <label class="form-label" for="location">Location</label>
                         <input required minlength="2" type="text" class="form-control" id="location"
                             placeholder="Where is it located?">
                     </div>
                     <div class="form-group">
-                        <label for="photo">Photo</label>
-                        <input type="url" class="form-control" id="photo" placeholder="Enter an image url of the place">
+                        <label class="form-label" for="destination_photo">Photo</label>
+                        <div class="input-group mb-3">
+                            <input type="url" class="form-control" id="photo" placeholder="Enter an image url of the place">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
+                        <label class="form-label" for="description">Description</label>
                         <textarea type="text" class="form-control" id="description"
                             placeholder="Where is it located?"></textarea>
                     </div>
@@ -96,7 +98,7 @@
                 </form>
             </div>
             <div class="col-md-9">
-                <h4 id="title">Enter Destination Details</h4>
+                <h4 class="enter_destination" id="title">Enter Destination Details</h4>
                 <div id="destinations_container">
                     <!-- Dynamically populated by Javascript -->
                 </div>
