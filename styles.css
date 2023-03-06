@@ -186,7 +186,7 @@ nav {
     display: flex;
     gap: 4rem;
     color: var(--color-bg-2);
-    position: fixed;
+    position: absolute;
     left: 27%;
     margin-top: 1rem;
 }
@@ -333,7 +333,7 @@ header {
   margin-top: 2rem;
   font-size: 40px;
   font-weight:400;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:'Times New Roman', Times, serif;
 }
 
   .card {
